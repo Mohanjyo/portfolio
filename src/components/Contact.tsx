@@ -43,7 +43,7 @@ const contactInfo = [
   {
     icon: FaPhone,
     label: 'Phone',
-    value: '+91 XXXXX XXXXX',
+    value: '+91 9392549789',
     href: 'tel:+91XXXXXXXXXX',
   },
   {
@@ -141,7 +141,7 @@ const Contact = () => {
 
             {/* Social Links */}
             <div>
-              <h3 className="text-xl font-semibold mb-4">Follow Me</h3>
+              <h3 className="text-xl font-semibold mb-4">Follow Me Through Social Media</h3>
               <div className="flex flex-wrap gap-4">
                 {socialLinks.map((social) => (
                   <motion.a
@@ -175,7 +175,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   className="w-full px-4 py-3 rounded-xl bg-muted/50 border border-border focus:border-primary/50 focus:ring-2 focus:ring-primary/20 outline-none transition-all"
-                  placeholder="John Doe"
+                  placeholder="Kucharlapati Hari Rammohan Raju"
                 />
               </div>
 
@@ -190,7 +190,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   className="w-full px-4 py-3 rounded-xl bg-muted/50 border border-border focus:border-primary/50 focus:ring-2 focus:ring-primary/20 outline-none transition-all"
-                  placeholder="john@example.com"
+                  placeholder="mohanrajukucharlapati@example.com"
                 />
               </div>
 
@@ -205,7 +205,7 @@ const Contact = () => {
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   className="w-full px-4 py-3 rounded-xl bg-muted/50 border border-border focus:border-primary/50 focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none"
-                  placeholder="Hello! I'd like to discuss..."
+                  placeholder="Heyy! I'd like to discuss..."
                 />
               </div>
 

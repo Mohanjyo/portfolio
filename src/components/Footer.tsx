@@ -16,7 +16,7 @@ const Footer = () => {
         >
           {/* Logo */}
           <a href="#home" className="text-xl font-bold gradient-text">
-            {'<HRM />'}
+            {'ℌ𝔞𝔯𝔦 ℜ𝔞𝔪𝔐𝔬𝔥𝔞𝔫 ℜ𝔞𝔧𝔲'}
           </a>
 
           {/* Copyright */}
@@ -26,7 +26,10 @@ const Footer = () => {
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 1, repeat: Infinity }}
             >
-              <FaHeart className="text-accent inline" />
+              {/* <FaHeart className="text-accent inline" /> */}
+              <p>     
+                
+              </p>
             </motion.span>{' '}
             using React & Framer Motion
           </p>

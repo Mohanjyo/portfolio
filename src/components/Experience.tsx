@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { HiAcademicCap, HiBadgeCheck, HiCode, HiLightningBolt } from 'react-icons/hi';
+import backgroundVideo from '@/assets/transformation.mp4';
 
 const experiences = [
   {
@@ -63,12 +64,24 @@ const Experience = () => {
 
   return (
     <section id="experience" className="py-24 relative">
+      {/* Background Video */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover opacity-20"
+      >
+        <source src={backgroundVideo} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
       <motion.div
         ref={ref}
         variants={containerVariants}
         initial="hidden"
         animate={isInView ? 'visible' : 'hidden'}
-        className="section-container"
+        className="section-container relative z-10"
       >
         {/* Section Header */}
         <motion.div variants={itemVariants} className="text-center mb-16">

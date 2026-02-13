@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaInstagram, FaTwitter } from 'react-icons/fa';
 import { HiArrowDown } from 'react-icons/hi';
 import profileImage from '@/assets/profile-avatar.png';
+import backgroundVideo from '@/assets/transformation.mp4';
 
 const socialLinks = [
   { 
@@ -18,16 +19,11 @@ const socialLinks = [
   },
   { 
     icon: FaInstagram, 
-    href: 'https://instagram.com/', 
+    href: 'https://www.instagram.com/mohan_kucharlapati/', 
     label: 'Instagram',
     color: 'hover:text-accent'
   },
-  { 
-    icon: FaTwitter, 
-    href: 'https://twitter.com/', 
-    label: 'Twitter',
-    color: 'hover:text-neon-cyan'
-  },
+  
 ];
 
 const Hero = () => {
@@ -78,6 +74,18 @@ const Hero = () => {
         transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
       />
 
+      {/* Background Video */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover opacity-20"
+      >
+        <source src={backgroundVideo} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -94,10 +102,10 @@ const Hero = () => {
 
           <motion.h1
             variants={itemVariants}
-            className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 leading-tight"
+            className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 leading-tight"
           >
             Hi, I'm{' '}
-            <span className="gradient-text text-glow">Hari Rammohan</span>
+            <span className="gradient-text text-glow">Hari Rammohan Raju</span>
           </motion.h1>
 
           <motion.div variants={itemVariants} className="mb-6">
@@ -171,22 +179,23 @@ const Hero = () => {
         {/* Profile Image */}
         <motion.div
           variants={itemVariants}
-          className="relative flex-shrink-0"
+          className="relative flex-shrink-5"
         >
           <motion.div
             className="relative"
-            animate={{ y: [0, -10, 0] }}
+            animate={{ y: [0, -5, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
           >
             {/* Glow effect */}
             <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-full blur-2xl opacity-40 scale-110" />
             
             {/* Image container */}
-            <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden neon-border p-1">
+            <div className="relative w-120 h-80 sm:w-96 sm:h-90 lg:w-[28rem] lg:h-[28rem] rounded-full overflow-hidden neon-border p-0">
               <img
                 src={profileImage}
                 alt="Hari Rammohan Raju"
-                className="w-full h-full object-cover rounded-full"
+                className="w-full h-full object-cover"
+                style={{ objectPosition: '12% 12%' }}
               />
             </div>
 

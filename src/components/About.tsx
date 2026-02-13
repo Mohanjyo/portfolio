@@ -3,6 +3,7 @@ import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { HiCode, HiLightBulb, HiAcademicCap, HiSparkles } from 'react-icons/hi';
 
+
 const highlights = [
   {
     icon: HiAcademicCap,
@@ -53,6 +54,7 @@ const About = () => {
     <section id="about" className="py-24 relative">
       {/* Background accent */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
+
 
       <motion.div
         ref={ref}

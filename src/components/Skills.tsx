@@ -8,6 +8,7 @@ import {
   SiTailwindcss, SiTypescript, SiTensorflow 
 } from 'react-icons/si';
 import { HiChip } from 'react-icons/hi';
+import backgroundVideo from '@/assets/background_video.mp4';
 
 const skills = [
   { name: 'HTML5', icon: FaHtml5, level: 90, color: '#E34F26' },
@@ -45,15 +46,27 @@ const Skills = () => {
       transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] as const },
     },
   };
-
+  
   return (
     <section id="skills" className="py-24 relative">
+      {/* Background Video */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover opacity-20"
+      >
+        <source src={backgroundVideo} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
       <motion.div
         ref={ref}
         variants={containerVariants}
         initial="hidden"
         animate={isInView ? 'visible' : 'hidden'}
-        className="section-container"
+        className="section-container relative z-10"
       >
         {/* Section Header */}
         <motion.div variants={itemVariants} className="text-center mb-16">

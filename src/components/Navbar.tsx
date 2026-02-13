@@ -8,8 +8,8 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog';
-// PDF is in public folder, accessible at root path
-const resumePdf = '/Resume.pdf';
+// Resume PDF from src/assets – import so Vite resolves the URL
+import resumePdf from '@/assets/Resume.pdf';
 
 const navLinks = [
   { name: 'Home', href: '#home' },
@@ -64,7 +64,7 @@ const Navbar = () => {
   const handleDownloadResume = () => {
     const link = document.createElement('a');
     link.href = resumePdf;
-    link.download = 'Hari_RamMohan_Raju_Resume.pdf';
+    link.download = 'Resume.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -246,6 +246,9 @@ const Navbar = () => {
               className="w-full h-full min-h-[600px] border-0 rounded-lg bg-white"
               style={{ minHeight: '600px', width: '100%' }}
               title="Resume Preview"
+              onError={() => {
+                console.error('Failed to load PDF in iframe');
+              }}
               allow="fullscreen"
             >
               <div className="flex flex-col items-center justify-center h-full min-h-[600px] p-8 text-center">
